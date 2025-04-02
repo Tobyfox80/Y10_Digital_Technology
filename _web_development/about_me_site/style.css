@@ -1,0 +1,115 @@
+* {
+    text-align: center;
+    margin:0 auto;
+}
+
+body {
+
+    background-color: rgb(6, 33, 6); 
+}
+@font-face {
+    font-family: Ringbearer;
+    src: url(fonts/RINGM___.TTF);
+}
+@font-face {
+    font-family: ProximaNova;
+    src: url(fonts/ProximaNova-Regular.otf);
+}
+ 
+div{
+    color:rgb(212, 163, 115);
+    text-align: left;
+    border: 1px solid ;
+    padding: 10px;
+    background-color: rgb(44, 95, 45);
+    margin: 10px 10px;
+    font-family: ProximaNova;
+}
+div h1, div h2, div h3, div h4, div h5, div h6 {
+    font-family: Ringbearer;
+    color: rgb(139, 94, 60);
+}
+div h5{
+    text-align: left;
+}
+button{
+    color:rgb(139, 94, 60);
+    text-align: center;
+    border: 1px solid ;
+    padding: 10px;
+    background-color: rgb(212, 163, 115);
+    margin: 10px 10px;
+    font-family: Ringbearer;
+    a{color:rgb(139, 94, 60) ;
+        font-family: Ringbearer;
+    }
+    a:hover{color: rgb( 212, 163, 115) ;
+    }
+}
+h1, h2, :not(h3)+:is(h3), :not(:not(h5))+:is(h5)  {
+    
+    color:rgb(139, 94, 60);
+    text-align: center;
+    border: 1px solid ;
+    padding: 10px;
+    background-color: rgb(44, 95, 45);
+    margin: 10px 10px;
+    font-family: Ringbearer;
+    a:link{color:rgb(139, 94, 60) ;
+        font-family: Ringbearer;
+    }
+    a:hover{color: rgb( 167, 201, 87) ;
+    }
+}
+p, ul
+{
+list-style-type: none;
+text-align: left;
+}
+
+.wrapper {
+    border: 1px solid rgb(139, 94, 60);
+    background-color: rgb(212, 163, 115);
+    height: 90vh;
+    width: 90%;
+    padding: 10px;
+    
+  }
+  
+  .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
+  
+  .column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+    border: 1px solid rgb(139, 94, 60);
+    max-width: 100%;
+    max-height: 100%;
+   
+  }
+  
+  .double-column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 2;
+  }
+  
+  .brown-column {
+    background-color: rgb(87, 59, 37);
+  }
+  
+  .green-column {
+      background-color: rgb(44, 95, 45);
+  }
+
+  img{
+    max-width: 100%;
+    max-height: 100%;
+  }

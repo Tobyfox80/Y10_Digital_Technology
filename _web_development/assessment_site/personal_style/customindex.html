@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Quick and Easy Omelette</title>
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon-32x32.png">
+    <link rel="stylesheet" href="customstyle.css">
+    <!--The script drives a scaling function-->
+    <script>
+      //declare base values for the recipe
+      let portioncount = 1;
+      let minEggs = 2;
+      let maxEggs = 3;
+      let cooktime = 5;
+      let preptime = 5;
+      let totaltime = 10;
+      let oil = 1;
+      //checks the input box and data sent by buttons to calculate the amount of portions wanted by the user
+      function changePortionCount(type) {
+        const userInput = document.getElementById("portioncount");
+        if (type === "up") {
+          //button only works if the current portion value is postive
+          if (portioncount > -1)  {
+            portioncount += 1;
+          }
+          userInput.value = portioncount;
+        }
+        if (type === "down") {
+          //button does not let user go below 1 for the amount of portions
+          if (portioncount > 1){
+            portioncount -= 1;
+          }
+          userInput.value = portioncount;
+        } 
+        else {
+          //stops user entering decimals
+          userInput.value = Math.round(userInput.value);
+          portioncount =+ Math.round(userInput.value);
+        }
+        if(userInput.value < 1 ){
+          //stops user entering negative amounts of portions
+          userInput.value=1
+          portioncount=1
+        }
+        //updates the page with correct info
+        updateVariables()
+        updatePage()
+      }
+      //calculates how much of each ingredient is needed based on amount of portions wanted by user
+      function updateVariables() {
+        minEggs = portioncount * 2;
+        maxEggs = minEggs  + Math.round(0.5 * portioncount);
+        cooktime = portioncount * 5;
+        preptime = portioncount + 4;
+        totaltime = cooktime + preptime;
+        oil = Math.round(0.5 * portioncount);
+      }
+      //updates the page with correct values
+      function updatePage() {
+        document.getElementById("totaltime").innerHTML = totaltime
+        document.getElementById("cooktime").innerHTML = cooktime
+        document.getElementById("preptime").innerHTML = preptime
+        document.getElementById("minEggs").innerHTML = minEggs
+        document.getElementById("maxEggs").innerHTML = maxEggs
+        document.getElementById("oil").innerHTML = oil
+      }
+      //ensures the values are correct when the page loads
+      window.onload = function updatePage(){
+        document.getElementById("totaltime").innerHTML = totaltime
+        document.getElementById("cooktime").innerHTML = cooktime
+        document.getElementById("preptime").innerHTML = preptime
+        document.getElementById("minEggs").innerHTML = minEggs
+        document.getElementById("maxEggs").innerHTML = maxEggs
+        document.getElementById("oil").innerHTML = oil
+      }
+    </script>
+  </head>
+  <body>
+    <!--card that breaks away from the background-->
+    <div class="recipecard">
+      <div class="section">
+        <h1>Simple Omelette Recipe</h1>
+      </div>
+      <div class="section">
+        <div class="row">
+          <div class="column">
+            <h3>Serving Count</h3>
+            <!--way for the user to change the amount of portions they want-->
+            <button onclick="changePortionCount('up')" class="scalingitem">+</button>
+            <input type="number" id="portioncount" value="1" min="1" onchange="changePortionCount()" class="scalingitem" title="Portions">
+            <button onclick="changePortionCount('down')" class="scalingitem">-</button>
+            <br>
+          </div>
+          <div class="column">
+            <h3>Estimated Time</h3>
+            <ul>
+              <li>Total: Approximately <span id="totaltime"></span> minutes</li>
+              <li>Preperation: <span id="preptime"></span> minutes</li>
+              <li>Cooking: <span id="cooktime"></span> minutes</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+          <h3>Ingredients</h3>
+          <img src="./assets/images/omelette-recipe-ingredients.jpg">
+          <ul>
+            <li><span id="minEggs"></span>-<span id="maxEggs"></span> Eggs</li>
+            <li><span id="oil"></span> tbsp butter or oil</li>
+            <li>Salt and Pepper to taste</li>
+            <li>Optional fillings: cheese, cooked meats, diced vegetables, etc.</li>
+          </ul> 
+      </div>
+      <div class="section">
+        <h2>Instructions</h2>
+        <ol> 
+          <img src="./assets/images/omelette-recipe-egg-beating.jpg">
+          <li>Beat the eggs: In a bowl, beat the eggs with a pinch of salt and pepper until they are well mixed. 
+          You can add a tablespoon of water or milk for a fluffier texture.</li>
+
+          <img src="./assets/images/omelette-recipe-pan-heating.jpg">
+          <li> Heat the pan: Place a non-stick frying pan over medium heat and add butter or oil.</li>
+
+          <img src="./assets/images/omelette-recipe-cooking.jpg">
+          <li>Cook the omelette: Once the butter is melted and bubbling, pour in the eggs. Tilt the pan to ensure 
+          the eggs evenly coat the surface.</li>
+
+          <img src="./assets/images/omelette-recipe-add-fillings.jpg">
+          <li> Add fillings (optional): When the eggs begin to set at the edges but are still slightly runny in the 
+          middle, sprinkle your chosen fillings over one half of the omelette.</li>
+
+          <img src="./assets/images/omelette-recipe-finish.jpg">
+          <li>Fold and serve: As the omelette continues to cook, carefully lift one edge and fold it over the 
+          fillings. Let it cook for another minute, then slide it onto a plate.</li>
+
+          <img src="./assets/images/omelette-recipe-served.jpg">
+          <li>Enjoy: Serve hot, with additional salt and pepper if needed.</li>
+        </ol>
+      </div>
+      <div class="section">
+          <h2>Nutrition Information</h2>
+          <div class="info">Value given as per serve without added fillings. <br> Serving size: 1 Omelette</div>
+          <br>
+          <div class="nutritionalvalues">
+            <div class="row">
+              <div class="nutritionlabel">
+                Calories
+              </div>
+              <div class="nutritionlabel">
+                <b>277kcal</b>
+              </div>
+            </div>
+            <div class="row">
+              <div class="nutritionlabel">
+                Carbs
+              </div>
+              <div class="nutritionlabel">
+                <b>0g</b>
+              </div>
+            </div>
+            <div class="row">
+              <div class="nutritionlabel">
+                Protein
+              </div>
+              <div class="nutritionlabel">
+                <b>20g</b>
+              </div>
+            </div>
+            <div class="row">
+              <div class="nutritionlabel">
+                Fat
+              </div>
+              <div class="nutritionlabel">
+                <b>22g</b>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css"
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family</title>
+    <script>
+        function calculateCounter(startYear, updateMonth, updateDay) {
+            const today = new Date();
+            const currentYear = today.getFullYear(); 
+            const eventDateThisYear = new Date(currentYear, updateMonth - 1, updateDay); 
+            let counter = currentYear - startYear; 
+            if (today < eventDateThisYear) {
+                counter -- ; 
+            }
+            return counter; 
+        }
+        function updateCounter(elementId, startYear, updateMonth, updateDay) {
+            const element = document.getElementById(elementId);
+            if (element) {
+                element.innerText = calculateCounter(startYear, updateMonth, updateDay);
+            }
+        }
+        window.onload = function() {
+            updateCounter("dad age", 1975, 8, 13); 
+            updateCounter("mum age", 1976, 6, 16); 
+            updateCounter("isabella age", 2007, 8, 26); 
+            updateCounter("finn age", 2013, 9, 5); 
+            updateCounter("cat age", 2015, 2, 10);
+              setInterval(function() {
+                updateCounter("dad age", 1975, 4, 13); 
+                updateCounter("mum age", 1976, 6, 16); 
+                updateCounter("isabella age", 2007, 8, 26); 
+                updateCounter("finn age", 2013, 9, 5); 
+                updateCounter("cat age", 2015, 2, 10); 
+            }, 10000); 
+        };
+    </script>
+</head>
+<body>
+    
+    <button> <a href="./home.html">Home</a> </button>
+    <button><a href="./family.html">Family</a> </button>
+    <button><a href="./food.html">Food</a> </button>
+    <button><a href="./hobbies.html">Hobbies</a> </button>
+    <button><a href="./code_demo.html">Code demo</a> </button>
+    <button><a href="html_testing_page.html">Html testing</a> </button>
+
+    <h1>Family
+    </h1>
+
+<div>
+    <h3>Close Family</h3>
+    <div class="row">
+       <div class="brown-column"> 
+        <h5>Dad - Andrew White</h5>
+        <P><span id="dad age"></span> Years old</P></div>
+       <div class="brown-column">
+        <h5>Mum - Sarah Plumley</h5>
+        <P><span id="mum age"></span> Years old</P></div>
+       <div class="brown-column">
+        <h5>Older Sister - Isabella White</h5>
+        <P><span id="isabella age"></span> Years old</P></div>
+       <div class="brown-column">
+        <h5>Younger Brother - Finn White</h5>
+        <P><span id="finn age"></span> Years old</P></div>
+       <div class="brown-column">
+        <h5>Cat - Cosmo</h5>
+        <P>information on cosmo</P>
+        <br>
+        <h5>Cat - Othello</h5>
+        <P>information on othello</P></div>
+    </div>
+   
+</div>
+</body>
+</html>

@@ -1,0 +1,127 @@
+* {
+    text-align: left;
+    scale: 100%;
+    max-height: 100%;
+    max-width: 100%;
+    color: #4a4948;
+    
+}
+@font-face {
+    font-family:Outfit ;
+    src: url(./assets/fonts/outfit/Outfit-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family:Young-Serif ;
+    src: url(./assets/fonts/young-serif/YoungSerif-Regular.ttf);
+}
+div, ol,  ul, li{
+    /*rounded white box and text style*/
+    font-family: Outfit;
+    background-color: white;
+    margin: auto;
+    font-size: 20px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+:not(div,ul,li, img, ol, b){
+    background-color: #f3e5d8;
+}
+ol ::marker{
+    color:#7b402f ;
+    font-weight: bold;
+}
+ul, ol{
+    margin-left: 4px;
+    padding-bottom: 15px;
+}
+h1{
+    /*title style*/
+    font-family: Young-Serif;
+    background-color: white;
+}
+h2{
+    /*heading styles*/
+    font-family: Young-Serif;
+    background-color: white;
+    color: #7b402f;
+}
+li{
+    padding-left: 10px;
+}
+.special, .special ul, .special h4, .special li, .special b{
+    /*pink box and text for prep info*/
+    background-color: #fff7fc;
+}
+.special h4{
+    color: #723750;
+    padding: 0%;
+    padding-top: 15px;
+    margin-left: 1%;
+}
+.special ul{
+    padding-left: 1%;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
+.column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+    border-top: 1px solid rgb(0, 0, 0);
+    border-bottom:1px solid rgb(0, 0, 0) ;
+    max-width: 100%;
+    max-height: 100%;
+   
+  }
+.main{
+    border-radius: 50px;
+    border-width: 12px;
+    width: 35%;
+    height: 85%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+img{
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 15%;
+    margin-top: 5%;
+  }
+.row{
+    text-align: left;
+    padding: 0;
+    border-bottom:#e5e5e5 1px solid;;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+}
+.nutritionvalue{
+    text-align: left;
+    padding-bottom: 100px;
+}
+.nutritionvalue :last-child{
+    border-bottom: 0px solid;
+}
+.nutritionlabel{
+    text-align: left;
+    padding: 0;
+    margin-left: 5%;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+}
+.row :last-child{
+    text-align: left;
+    color: #7b402f;
+
+}
+h2+:not(:last-child){
+    border-bottom: 0.5px solid #d1d1d1;
+}

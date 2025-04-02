@@ -1,0 +1,61 @@
+* {
+    text-align: center;
+    margin:0 auto;
+    max-width: 100%;
+    max-height: 100%;
+    scale: auto;
+}
+@font-face{
+    font-family: Avenir;
+    src: url(/challengefonts/Avenir-next-lt-pro/AvenirNextLTPro-Regular.otf);
+}
+@font-face {
+    font-family: Avenir-Light;
+    src: url(/challengefonts/Avenir-next-lt-pro/AvenirNextLTPro-It.otf);
+}
+@font-face {
+    font-family: AvantGardeThin;
+    src: url(/challengefonts/AvantGarde/AVGARDN_2.TTF);
+}
+h1{
+    text-align: left;
+    color: black;
+    font-family: AvantGardeThin;
+    margin: 10px 10px;
+    margin-left: 20px;
+}
+p, h2{
+    text-align: left;
+    color: black;
+    font-family: Avenir;
+    font-size: 210% ;
+    margin: 10px 10px;
+    margin-left: 20px;
+}
+
+.round-button {
+    display:block;
+    width:120px;
+    height:120px;
+    line-height:900% ;
+    border-radius: 50%;
+    color:#f3f3f3;
+    font-family: AvantGardeThin;
+    text-align:center;
+    text-decoration:none;
+    background-color: #232326;
+    font-size: 80% ;
+    margin:0 auto;
+    
+}
+.round-button:hover {
+    background-color: #696972;
+}
+
+
+.footer video {
+  max-width: 90%;
+  max-height: 80%;
+  object-fit: cover;
+  z-index: 0;
+}
