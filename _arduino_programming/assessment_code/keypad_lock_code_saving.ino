@@ -1,9 +1,3 @@
-//add hints
-//lights?
-//servo for actual lock?
-//make a safe thing out of mdf or smth, laser cut
-//solder final thing together at home ehehehehe
-//can use for assessment, document what i have here before making changes 
 #include <LiquidCrystal.h>
 #include <EEPROM.h>  //code is stored here
 LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
